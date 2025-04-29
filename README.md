@@ -20,7 +20,8 @@ Connect your database. Run SQL queries. Build and share custom panels. No heavy 
 
 ## 🔗 Live Demo (Landing Page)
 
-👉 [https://csqp-project.github.io](https://csqp-project.github.io)  
+👉 [Webpage](https://kantrveysel.github.io/csqp/)
+
 Browse public panel templates or learn about the system.
 
 ---
