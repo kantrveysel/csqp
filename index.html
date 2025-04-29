@@ -7,19 +7,19 @@
 CSQP - Custom SQL Panels | Free, Secure SQL Automation</title>
  <meta name="description" content="CSQP: A lightweight, secure platform to connect databases, run SQL queries, and build panels for personal or team use.">
  <link rel="stylesheet" href="static/styles.css">
- <link rel="icon" href="static/favicon.png">
+ <link rel="icon" href="imgs/logo.png">
  </head>
  <body>
  <header>
  <div class="container">
     <div class="logo" style="display: flex; align-items: center;">
-      <img src="imgs/logo.png" alt="CSQP Logo" style="height: 32px; width: 32px; margin-right: 10px;">
+  <img src="imgs/logo.png" alt="CSQP Logo" style="height: 100%; max-height: 64px; width: auto; margin-right: 10px;">
       <span style="font-size: 1.5em; font-weight: bold;">CSQP</span>
     </div>
  <nav>
- <a href="https://github.com/csqp-project">
+ <a href="https://github.com/kantrveysel/csqp">
 GitHub</a>
- <a href="https://discord.gg/csqp">
+ <a href="https://discord.gg/XZrnxgXprv">
 Discord</a>
  <a href="https://x.com/csqp_project">
 X (Twitter)</a>
@@ -32,9 +32,9 @@ Query, Visualize, Share — Your SQL, Your Way</h1>
  <p>
 CSQP is a customizable, secure SQL dashboard system that helps you connect to your own databases, run queries, and build sharable panels — no heavy BI tools required.</p>
  <div class="cta-buttons">
- <a href="https://github.com/csqp-project" class="btn primary">
+ <a href="https://github.com/kantrveysel/csqp" class="btn primary">
 Try Free Now</a>
- <a href="https://github.com/csqp-project" class="btn secondary">
+ <a href="https://github.com/kantrveysel/csqp" class="btn secondary">
 View on GitHub</a>
  </div>
  </section>
@@ -89,9 +89,50 @@ Modules and panels can be scoped to teams, with role-based access for secure col
 Ready to Get Started?</h2>
  <p>
 All features are free during early development. Try now, connect your database, and build your first panel in minutes.</p>
- <a href="https://github.com/csqp-project" class="btn primary">
-Launch CSQP</a>
+ <a href="#" class="btn primary"  id="openPopup">Launch CSQP</a>
+<div id="popupOverlay">
+  <div class="popupContent">
+    <span id="closePopup">&times;</span>
+  <img src="imgs/logo.png" alt="CSQP Logo" style="height: 100%; max-height: 64px; width: auto; margin-right: 10px;">
+    <h2>Join the Waitlist</h2>
+    <form
+      action="https://formspree.io/f/mldbgblj"
+      method="POST"
+    >
+        <input type="email" name="email" placeholder="Enter your email" required>
+        <textarea name="message" placeholder="Tell us why you're interested!"></textarea>
+      <button type="submit" class="btn primary">Send</button>
+    </form>
+  </div>
+</div>
  </section>
+ <script>
+  window.addEventListener('scroll', function() {
+    const header = document.querySelector('header');
+    if (window.scrollY > 10) {
+      header.classList.add('scrolled');
+    } else {
+      header.classList.remove('scrolled');
+    }
+  });
+  document.getElementById("openPopup").addEventListener("click", function(e) {
+    e.preventDefault();
+    document.getElementById("popupOverlay").style.display = "flex";
+  });
+
+  document.getElementById("closePopup").addEventListener("click", function() {
+    document.getElementById("popupOverlay").style.display = "none";
+  });
+
+  // Overlay tıklayınca kapansın
+  document.getElementById("popupOverlay").addEventListener("click", function(e) {
+    if (e.target === this) {
+      this.style.display = "none";
+    }
+  });
+</script>
+
+ </script>
  <footer>
  <p>
 © 2025 CSQP Project. All rights reserved.</p>
@@ -106,5 +147,7 @@ X</a>
  </footer>
  <script>
  document.addEventListener("DOMContentLoaded", function () { const features = document.querySelectorAll(".feature"); features.forEach(function(feature) { feature.addEventListener("click", function() { features.forEach(function(f) { if (f !== feature) f.classList.remove("active"); }); feature.classList.toggle("active"); }); }); }); </script>
+ 
+
  </body>
  </html>

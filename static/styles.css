@@ -1,14 +1,14 @@
 /* Root Colors */
 :root {
-  --primary-bg-color: #0A0D0B; /* Logo Arkaplan Rengi */
-  --primary-text-color: #9ACF8A; /* Logo Yazı Rengi */
-  --primary-color: #51B795; /* Logo Şekil Ana Rengi */
-  --secondary-color: #28494E; /* Logo Şekil İkinci Rengi */
-  --accent-color: #00d4ff; /* Genel vurgulama rengi */
-  --background-color: #1b1b32; /* Genel arka plan rengi */
-  --text-color: #ffffff; /* Genel yazı rengi */
-  --secondary-text-color: #cccccc; /* İkinci yazı rengi */
-  --hover-color: #ff007a; /* Hover rengi */
+  --primary-bg-color: #0A0D0B; 
+  --primary-text-color: #9ACF8A; 
+  --primary-color: #51B795; 
+  --secondary-color: #28494E; 
+  --accent-color: #00d4ff; 
+  --background-color: #1b1b32; 
+  --text-color: #ffffff; 
+  --secondary-text-color: #cccccc; 
+  --hover-color: #ff007a;
 }
 
 /* Reset and Base Styles */
@@ -38,6 +38,11 @@ header {
   position: sticky;
   top: 0;
   z-index: 100;
+  transition: opacity 3s cubic-bezier(0, 0.01, 0, 0.96);
+}
+
+header.scrolled {
+  opacity: 0.75;
 }
 
 header .container {
@@ -122,7 +127,7 @@ nav a:hover {
 
 /* Features Section */
 #features {
-  padding: 60px 20px;
+  padding: 60px 60px;
   background: var(--primary-bg-color);
 }
 
@@ -256,7 +261,6 @@ nav a:hover {
 }
 
 #try-now h2 {
-  font-size: 2.5rem;
   margin-bottom: 20px;
   color: var(--accent-color);
 }
@@ -299,25 +303,156 @@ footer p {
 
 /* Responsive Design */
 @media (max-width: 768px) {
-  #hero h1 {
-      font-size: 2rem;
-  }
-
-  #hero p {
-      font-size: 1rem;
-  }
-
-  .cta-buttons {
-      flex-direction: column;
-      gap: 10px;
-  }
-
   header .container {
-      flex-direction: column;
-      gap: 10px;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  nav {
+    margin-top: 0;
+    display: flex;
+    flex-direction: row; /* ← Yatay hale getir */
+    flex-wrap: wrap;
+    gap: 10px;
+    font-size: 14px; /* ← Fontu küçült */
   }
 
   nav a {
-      margin: 0 10px;
+    margin: 0 8px;
+    font-size: 14px; /* ← Link fontu küçült */
   }
+
+  .logo {
+    width: 100%;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    margin-bottom: 10px;
+  }
+
+  #hero h1 {
+    font-size: 2rem;
+  }
+
+  #hero p {
+    font-size: 1rem;
+    padding: 0 10px;
+  }
+
+  .cta-buttons {
+    flex-direction: column;
+    gap: 10px;
+    width: 100%;
+  }
+
+  .btn {
+    width: 100%;
+    text-align: center;
+  }
+
+  .features-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .feature {
+    text-align: left;
+  }
+
+  .feature h3 {
+    font-size: 1.25rem;
+  }
+
+  .feature p,
+  .feature-details {
+    font-size: 0.95rem;
+  }
+
+  footer {
+    text-align: center;
+  }
+
+  .social-links {
+    flex-direction: column;
+    gap: 5px;
+    margin-top: 10px;
+  }
+}
+
+@media (max-width: 480px) {
+  #hero h1 {
+    font-size: 1.5rem;
+  }
+
+  #features h2,
+  #demo h2 {
+    font-size: 2rem;
+  }
+
+  #hero,
+  #features,
+  #try-now,
+  #demo {
+    padding: 40px 10px;
+  }
+
+  .btn {
+    font-size: 1rem;
+    padding: 10px 16px;
+  }
+
+  .feature {
+    padding: 15px;
+  }
+}
+
+
+#popupOverlay {
+  display: none;
+  position: fixed;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+  background: rgba(0,0,0,0.6);
+  z-index: 1000;
+  justify-content: center;
+  align-items: center;
+}
+
+.popupContent {
+  background: var(--primary-bg-color);
+  padding: 30px;
+  border-radius: 10px;
+  width: 90%;
+  max-width: 400px;
+  text-align: center;
+  position: relative;
+  color: var(--text-color);
+}
+
+.popupContent input, .popupContent textarea {
+  width: 80%;
+  padding: 10px;
+  margin-bottom: 15px;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+}
+
+.popupContent button {
+  width: 80%;
+  padding: 10px;
+  border: none;
+  border-radius: 5px;
+  background-color: #007bff;
+  color: white;
+  cursor: pointer;
+}
+
+#closePopup {
+  position: absolute;
+  top: 10px;
+  right: 15px;
+  font-size: 24px;
+  cursor: pointer;
+  color: var(--accent-color);
 }
