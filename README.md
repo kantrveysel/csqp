@@ -52,7 +52,7 @@ This repository includes **open panel layouts** and SQL templates for different 
 ## 📦 Repository Structure
 
 / 
-├── index.html # Landing page (static) 
+├── index.html # Landing page (static)
 ├── static/ # CSS, logos, etc. 
 ├── panels/ # Example panel definitions (SQL + layout config) 
 └── README.md
