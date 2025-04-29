@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+ <html lang="en">
+ <head>
+ <meta charset="UTF-8">
+ <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ <title>
+CSQP - Custom SQL Panels | Free, Secure SQL Automation</title>
+ <meta name="description" content="CSQP: A lightweight, secure platform to connect databases, run SQL queries, and build panels for personal or team use.">
+ <link rel="stylesheet" href="static/styles.css">
+ <link rel="icon" href="static/favicon.png">
+ </head>
+ <body>
+ <header>
+ <div class="container">
+    <div class="logo" style="display: flex; align-items: center;">
+      <img src="imgs/logo.png" alt="CSQP Logo" style="height: 32px; width: 32px; margin-right: 10px;">
+      <span style="font-size: 1.5em; font-weight: bold;">CSQP</span>
+    </div>
+ <nav>
+ <a href="https://github.com/csqp-project">
+GitHub</a>
+ <a href="https://discord.gg/csqp">
+Discord</a>
+ <a href="https://x.com/csqp_project">
+X (Twitter)</a>
+ </nav>
+ </div>
+ </header>
+ <section id="hero">
+ <h1>
+Query, Visualize, Share — Your SQL, Your Way</h1>
+ <p>
+CSQP is a customizable, secure SQL dashboard system that helps you connect to your own databases, run queries, and build sharable panels — no heavy BI tools required.</p>
+ <div class="cta-buttons">
+ <a href="https://github.com/csqp-project" class="btn primary">
+Try Free Now</a>
+ <a href="https://github.com/csqp-project" class="btn secondary">
+View on GitHub</a>
+ </div>
+ </section>
+ <section id="features">
+ <h2>
+Core Features</h2>
+ <div class="features-grid">
+ <div class="feature">
+ <h3>
+🔌 Connect Your Database</h3>
+ <p>
+Supports MariaDB and MSSQL. Add your own data sources with encrypted credentials using a simple UI.</p>
+ <div class="feature-details">
+Credentials are stored using Fernet encryption, and tested for validity on entry.</div>
+ </div>
+ <div class="feature">
+ <h3>
+🧠 Run and Save SQL Queries</h3>
+ <p>
+Write SQL statements directly. View results, debug queries, and create reusable visual panels.</p>
+ <div class="feature-details">
+Query results are displayed in real time, and can be connected to custom charts or shared dashboards.</div>
+ </div>
+ <div class="feature">
+ <h3>
+📊 Panel-Based Visualization</h3>
+ <p>
+Panels let you turn raw SQL into live data insights using Chart.js — no frontend coding required.</p>
+ <div class="feature-details">
+Create bar, line, and pie charts by selecting columns from your query result. Easily configure display options.</div>
+ </div>
+ <div class="feature">
+ <h3>
+🔐 Secure Authentication</h3>
+ <p>
+Built-in bcrypt password hashing and optional two-factor authentication (2FA).</p>
+ <div class="feature-details">
+Each user account can enable TOTP-based 2FA via QR code, and sessions are managed with Flask-Login.</div>
+ </div>
+ <div class="feature">
+ <h3>
+👥 Team or Solo Workflow</h3>
+ <p>
+Start solo or build a team. Grant view, use, or edit access per module, per team.</p>
+ <div class="feature-details">
+Modules and panels can be scoped to teams, with role-based access for secure collaboration.</div>
+ </div>
+ </div>
+ </section>
+ <section id="try-now">
+ <h2>
+Ready to Get Started?</h2>
+ <p>
+All features are free during early development. Try now, connect your database, and build your first panel in minutes.</p>
+ <a href="https://github.com/csqp-project" class="btn primary">
+Launch CSQP</a>
+ </section>
+ <footer>
+ <p>
+© 2025 CSQP Project. All rights reserved.</p>
+ <div class="social-links">
+ <a href="https://github.com/csqp-project">
+GitHub</a>
+ | <a href="https://discord.gg/csqp">
+Discord</a>
+ | <a href="https://x.com/csqp_project">
+X</a>
+ </div>
+ </footer>
+ <script>
+ document.addEventListener("DOMContentLoaded", function () { const features = document.querySelectorAll(".feature"); features.forEach(function(feature) { feature.addEventListener("click", function() { features.forEach(function(f) { if (f !== feature) f.classList.remove("active"); }); feature.classList.toggle("active"); }); }); }); </script>
+ </body>
+ </html>

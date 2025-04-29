@@ -1,0 +1,323 @@
+/* Root Colors */
+:root {
+  --primary-bg-color: #0A0D0B; /* Logo Arkaplan Rengi */
+  --primary-text-color: #9ACF8A; /* Logo Yazı Rengi */
+  --primary-color: #51B795; /* Logo Şekil Ana Rengi */
+  --secondary-color: #28494E; /* Logo Şekil İkinci Rengi */
+  --accent-color: #00d4ff; /* Genel vurgulama rengi */
+  --background-color: #1b1b32; /* Genel arka plan rengi */
+  --text-color: #ffffff; /* Genel yazı rengi */
+  --secondary-text-color: #cccccc; /* İkinci yazı rengi */
+  --hover-color: #ff007a; /* Hover rengi */
+}
+
+/* Reset and Base Styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Poppins', sans-serif;
+  background: var(--primary-bg-color);
+  color: var(--text-color);
+  line-height: 1.6;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+/* Header */
+header {
+  background: var(--primary-bg-color);
+  padding: 20px 0;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+
+header .container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.logo {
+  width: 5%;
+  color: var(--primary-text-color);
+}
+
+nav a {
+  color: var(--accent-color);
+  text-decoration: none;
+  margin-left: 20px;
+  font-weight: 400;
+  transition: color 0.3s;
+}
+
+nav a:hover {
+  color: var(--hover-color);
+}
+
+/* Hero Section */
+#hero {
+  text-align: center;
+  padding: 80px 20px;
+  background: linear-gradient(135deg, var(--primary-bg-color), var(--primary-color));
+}
+
+#hero h1 {
+  font-size: 3rem;
+  margin-bottom: 20px;
+  color: var(--accent-color);
+}
+
+#hero p {
+  font-size: 1.2rem;
+  margin-bottom: 30px;
+  max-width: 600px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.cta-buttons {
+  display: flex;
+  gap: 20px;
+  justify-content: center;
+}
+
+.btn {
+  padding: 12px 24px;
+  border-radius: 5px;
+  text-decoration: none;
+  font-weight: 600;
+  transition: background 0.3s, transform 0.2s;
+}
+
+.btn.primary {
+  background: var(--accent-color);
+  color: var(--primary-bg-color);
+}
+
+.btn.primary:hover {
+  background: var(--hover-color);
+  transform: scale(1.05);
+}
+
+.btn.secondary {
+  background: transparent;
+  border: 2px solid var(--accent-color);
+  color: var(--accent-color);
+}
+
+.btn.secondary:hover {
+  border-color: var(--hover-color);
+  color: var(--hover-color);
+  transform: scale(1.05);
+}
+
+/* Features Section */
+#features {
+  padding: 60px 20px;
+  background: var(--primary-bg-color);
+}
+
+#features h2 {
+  text-align: center;
+  font-size: 2.5rem;
+  margin-bottom: 40px;
+  color: var(--accent-color);
+}
+
+.features-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 20px;
+}
+
+.feature {
+  background: var(--secondary-color);
+  padding: 20px;
+  border-radius: 10px;
+  text-align: center;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+.feature-details {
+  display: none;
+  margin-top: 10px;
+  font-size: 14px;
+  background: var(--secondary-color);
+  line-height: 1.5;
+}
+
+.feature.active {
+  background: var(--secondary-color);
+  box-shadow: 0 4px 8px rgba(0, 255, 0, 0.2);
+}
+
+.feature.active .feature-details {
+  display: block;
+}
+.feature h3 {
+  font-size: 1.5rem;
+  margin-bottom: 10px;
+}
+
+.feature p {
+  font-size: 1rem;
+  color: var(--secondary-text-color);
+}
+
+/* Demo Section */
+#demo {
+  padding: 60px 20px;
+  text-align: center;
+  background: var(--primary-bg-color);
+}
+
+#demo h2 {
+  font-size: 2.5rem;
+  margin-bottom: 20px;
+  color: var(--accent-color);
+}
+
+#demo p {
+  font-size: 1.2rem;
+  margin-bottom: 30px;
+}
+
+.video-placeholder iframe {
+  max-width: 100%;
+  border-radius: 10px;
+}
+
+/* Testimonials Section */
+#testimonials {
+  padding: 60px 20px;
+  background: var(--primary-bg-color);
+  opacity: 0; /* Başlangıçta görünmez */
+  transition: opacity 1s ease-in-out;
+}
+
+#testimonials.show {
+  opacity: 1; /* Efektle görünür olacak */
+}
+#testimonials h2 {
+  text-align: center;
+  font-size: 2.5rem;
+  margin-bottom: 40px;
+  color: var(--accent-color);
+}
+
+.testimonials-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 20px;
+  overflow: hidden;
+  flex-wrap: nowrap;
+}
+
+.testimonial {
+  background: var(--secondary-color);
+  padding: 20px;
+  border-radius: 10px;
+  text-align: center;
+  transform: translateY(20px);
+  flex: 0 0 33.33%; /* En fazla 3 testimonial görünmesini sağlar */
+  opacity: 0;
+  transition: transform 0.6s ease-out, opacity 0.6s ease-out;
+}
+
+.testimonial.visible {
+  transform: translateY(0);
+  opacity: 1;
+}
+.testimonial p {
+  font-style: italic;
+  margin-bottom: 10px;
+  color: var(--secondary-text-color);
+}
+
+.testimonial h4 {
+  font-size: 1.2rem;
+  color: var(--accent-color);
+}
+
+/* Try Now Section */
+#try-now {
+  padding: 60px 20px;
+  text-align: center;
+  background: linear-gradient(135deg, var(--primary-bg-color), var(--primary-color));
+}
+
+#try-now h2 {
+  font-size: 2.5rem;
+  margin-bottom: 20px;
+  color: var(--accent-color);
+}
+
+#try-now p {
+  font-size: 1.2rem;
+  margin-bottom: 30px;
+  max-width: 600px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+#try-now .btn {
+  font-size: 1.2rem;
+  padding: 15px 30px;
+}
+
+/* Footer */
+footer {
+  padding: 20px;
+  background: var(--primary-bg-color);
+  text-align: center;
+}
+
+footer p {
+  font-size: 0.9rem;
+  color: var(--secondary-text-color);
+}
+
+.social-links a {
+  color: var(--accent-color);
+  text-decoration: none;
+  margin: 0 10px;
+  font-size: 0.9rem;
+}
+
+.social-links a:hover {
+  color: var(--hover-color);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  #hero h1 {
+      font-size: 2rem;
+  }
+
+  #hero p {
+      font-size: 1rem;
+  }
+
+  .cta-buttons {
+      flex-direction: column;
+      gap: 10px;
+  }
+
+  header .container {
+      flex-direction: column;
+      gap: 10px;
+  }
+
+  nav a {
+      margin: 0 10px;
+  }
+}
