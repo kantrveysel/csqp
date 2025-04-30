@@ -13,7 +13,7 @@ A secure, lightweight SQL dashboard platform built for devs, analysts, and small
 - [x] Panel builder with SQL preview
 - [x] Role-based team management (owner/use/view)
 - [x] Basic Chart.js visualization
-- [ ] Public landing page deployment
+- [x] Public landing page deployment
 - [ ] One-click demo database (for tryouts)
 
 ---
